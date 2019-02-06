@@ -13,4 +13,3 @@ Both functions are well commented.
 
 # To the reviewer
 Please feel free to comment on my code or fork my repo as i'm open to learning new ways of solving a problem.
-
