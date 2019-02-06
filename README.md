@@ -7,7 +7,7 @@ Leet leverages Javascript's object literal as a data structure for mapping leet 
 # summarizeSerially (str :String) => newString :String
 There are several ways to solve this kind of problem. I prefer, minimizing state as much as possible, so I used the reduce function in this case to track the current and previous values of a string. Instead of for loops or nested for loops.
 
-This function favours readability of performance.
+This function favours readability over performance.
 
 Both functions are well commented.
 
