@@ -41,5 +41,38 @@ function leet(str) {
 l(leet(str));
 
 
+// Input --> 'hhhhhqqlllllllhhhppp'
+// Output --> 'h5q2l7h3p3,'
+function summarizeSerially(str) {
+    const arr = [];
+
+    // Compose input into ['hhhhh', 'qq', 'lllllll', 'hhhppp']
+    // And store in `lettersArr` 
+    str.split('').reduce((acc, val) => {
+        if (acc === val) {
+            arr.push(acc);
+        } else {
+            arr.push(',',val);
+        }
+        return val;
+    }, '');
+
+    const lettersArr = arr.join('').split(',');
+    
+    // Summarize ['hhhhh', 'qq', 'lllllll', 'hhhppp'] into h5q2l7h3p3
+    let summary = '';
+    for (letters of lettersArr) {
+        if (letters.length !== 0) {
+            summary += `${letters.substring(0, 1)}${letters.length}`
+        }
+    }
+
+    return summary;
+}
+
+// Log to console
+l(summarizeSerially('hhhhhqqlllllllhhhppp'));
+
+
 
 
