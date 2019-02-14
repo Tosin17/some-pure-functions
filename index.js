@@ -25,30 +25,20 @@ function leet(str) {
     return newStr;
 }
 
-function formatStr(str) {  
-    str.split('').reduce((acc, val) => {
-        if (acc === val) {
-            arr.push(acc);
-        } else {
-            arr.push(',',val);
-        }
-        return val;
-    }, '');
-
-    return arr.join('').split(',');
-}
-
-function summarizeSerially(str) {
-    const arr = [];
-    
-    let summary = '';
-    for (letters of formatStr(str)) {
-        if (letters.length !== 0) {
-            summary += `${letters.substring(0, 1)}${letters.length}`
-        }
+function serializeStr(str) {
+  str += '$';
+  const summary = [];
+  let count = 0;
+  
+  for (let i = 0; i < str.length; i++) {
+    count += 1;
+    if (str[i - 1] && str[i - 1] !== str[i]) {
+      summary.push(str[i - 1] + count);
+      count = 0;
     }
-
-    return summary;
+  }
+  
+  return summary.join('');
 }
 
 
